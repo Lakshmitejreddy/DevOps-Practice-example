@@ -1,0 +1,28 @@
+---
+- name: install httpd using when condition-playbook
+  become: true
+  tasks:
+# install app and start service -RedHat
+  - name: install httpd
+    yum:
+      name: httpd
+      state: installed
+    when: ansible_os_family=="RedHat"
+  - name: start service httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family=="RedHat"  
+
+# install app and start service - ubuntu
+  - name: install apache2
+    apt:
+      name: apache2
+      state: present
+    when: ansible_os_family=="Debian"
+  - name: start service apache2
+    service:
+      name: apache2
+      state: started
+    when: ansible_os_family=="Debian"  
+
