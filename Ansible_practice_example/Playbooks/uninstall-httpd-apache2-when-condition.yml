@@ -3,7 +3,7 @@
   hosts: all
   become: true
   tasks:
-# uninstall app and start service -RedHat
+# uninstall httpd app and start service -RedHat
   - name: stop service httpd
     service:
       name: httpd
@@ -15,7 +15,7 @@
       state: removed
     when: ansible_os_family=="RedHat"
  
-# uninstall app and start service - ubuntu
+# uninstall apache2 app and start service - ubuntu
   - name: stop service apache2
     service:
       name: apache2
