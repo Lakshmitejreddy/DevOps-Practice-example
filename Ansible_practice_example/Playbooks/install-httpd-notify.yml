@@ -7,7 +7,7 @@
     yum: 
      name: httpd
      state: installed
-     notify: start service httpd
+    notify: start service httpd
   handlers:
   - name: start service httpd
     service:
