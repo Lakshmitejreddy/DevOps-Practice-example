@@ -1,0 +1,16 @@
+---
+- name: install apache-playbook
+  hosts: webservers=RHEL
+  become: true
+  tasks:
+# Install HTTPD
+  - name: install apache
+    yum:
+      name: httpd
+      state: installed
+# Start Service
+  - name: start service
+     service:
+      name: httpd
+      service: started
+      
