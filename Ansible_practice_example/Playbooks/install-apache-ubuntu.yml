@@ -1,0 +1,15 @@
+---
+- name: install ubuntu-playbook
+  hosts: dbservers=Ubuntu
+  become: true
+  tasks:
+# Install HTTPD
+  - name: install ubuntu
+    apt:
+      name: apache2
+      state: present
+# Start Service
+  - name: start service
+    service:
+      name: apache2
+      service: started
