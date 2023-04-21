@@ -1,0 +1,11 @@
+---
+- name: create copy-playbook
+  hosts: all
+  become: true
+  tasks:
+  - name: create copy file
+    copy:
+      src: /opt/ansible/index.html
+      dest: /home/ansadmin
+      mode: 7777
+      owner: appuser2
