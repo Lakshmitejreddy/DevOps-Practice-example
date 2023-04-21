@@ -10,7 +10,7 @@
       state: installed
 # Start Service
   - name: start service
-     service:
+    service:
       name: httpd
       service: started
       

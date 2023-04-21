@@ -1,0 +1,15 @@
+---
+- name: uninstall apache-playbook
+  hosts: webservers=RHEL
+  become: true
+  tasks:
+# Stop Service
+  - name: stop service
+    service:
+      name: httpd
+      service: stopped
+# Uninstall HTTPD
+  - name: uninstall apache
+    yum:
+      name: httpd
+      state: removed
