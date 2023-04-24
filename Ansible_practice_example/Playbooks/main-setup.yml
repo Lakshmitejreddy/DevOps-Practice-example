@@ -1,0 +1,6 @@
+---
+- name: managing ansible roles
+  hosts: all
+  become: true
+  roles:
+    - setup-app
