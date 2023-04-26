@@ -19,7 +19,7 @@
   - name: copy index.html file
     copy:
       src: /opt/ansible/index.html
-      dest: /var/www/html
+      dest: /opt/ansible/setup-app/files
       mode: 0777
 
 
